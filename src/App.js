@@ -8,15 +8,16 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    const respo = dispatch(FETCH_CITY())
-    console.log(respo);
+    dispatch(FETCH_CITY())
   },[])
 
-  const data = useSelector(state => console.log(state.country)) 
+  const data = useSelector(state => state.country)
 
   return (
     <div className="App">
       <h1>Hello World</h1>
+      {data.isLoading && <h2>LOADING</h2>}
+      {data.city.length > 0 && <h3>Got Data</h3>}
     </div>
   );
 }
