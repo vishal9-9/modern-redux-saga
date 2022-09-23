@@ -34,6 +34,7 @@ function SignUp() {
         >
             {({ errors, touched, handleBlur }) => (
                 <Form>
+                    {console.log(errors)}
                     <Field
                         name="firstName"
                         placeholder='fname'
